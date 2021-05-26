@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-
 namespace Employee_PayRoll_Service_1
 {
     public class EmployeeRepo
     {
         public static string connectionString = "Data Source=DESKTOP-CL8506B;Initial Catalog=payroll_service;Integrated Security=True";
         SqlConnection connection = new SqlConnection(connectionString);
-        public void GetAllEmployee()
+        public bool GetAllEmployee()
         {
             try
             {
@@ -63,6 +62,7 @@ namespace Employee_PayRoll_Service_1
                     //Closing SQL Connection
                     connection.Close();
                 }
+                return true;
             }
             catch (Exception e)
             {
