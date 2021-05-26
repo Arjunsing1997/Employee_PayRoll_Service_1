@@ -11,6 +11,11 @@ namespace Employee_PayRoll_Service_1
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Pay roll service");
+
+            EmployeeRepo repo = new EmployeeRepo();
+            repo.GetAllEmployee();
+
+            Console.ReadLine();
         }
     }
 }
